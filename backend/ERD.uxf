@@ -1,0 +1,32 @@
+<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>361</x><y>180</y><w>100</w><h>110</h></coordinates><panel_attributes>Container
+--
+containerId (PK)
+name
+location
+height
+wasteType</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>881</x><y>110</y><w>100</w><h>50</h></coordinates><panel_attributes>SimpleClass</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>91</x><y>180</y><w>100</w><h>90</h></coordinates><panel_attributes>Sensor
+--
+sensorId (PK)
+name
+containerId* (FK)
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>181</x><y>210</y><w>200</w><h>50</h></coordinates><panel_attributes>lt=-
+m1=0..1
+m2=0..1
+is attached to &gt;</panel_attributes><additional_attributes>10;20;180;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>361</x><y>300</y><w>100</w><h>110</h></coordinates><panel_attributes>reading
+--
+readingId (PK)
+datetime
+data/length
+battery
+sensorId* (FK)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>121</x><y>260</y><w>260</w><h>100</h></coordinates><panel_attributes>lt=-
+m1=1..1
+m2=0..*
+
+has read &gt;</panel_attributes><additional_attributes>10;10;10;70;240;70</additional_attributes></element><element><id>UMLNote</id><coordinates><x>180</x><y>60</y><w>220</w><h>90</h></coordinates><panel_attributes>Note:
+--
+bg=white
+fg=black
+Sensor og container 
+er separert inn i to entiteter. På denne 
+måten er sensorer plug-n-play, og kan
+konfigureres fra sentralen</panel_attributes><additional_attributes></additional_attributes></element></diagram>

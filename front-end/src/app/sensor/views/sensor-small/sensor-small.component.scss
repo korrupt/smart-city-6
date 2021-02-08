@@ -1,0 +1,45 @@
+@import 'screen.mixin.scss';
+@import '~@angular/material/theming';
+:host {
+    // padding: 2px;
+    overflow: visible;
+}
+.component {
+    position: relative;
+    display: grid;
+    grid: 1fr / 1fr 40px;
+    background: red;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px 16px;
+    border-radius: 4px;
+    background: #FFF;
+    .text {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        h3 {
+            
+        }
+        p {
+            margin-top: -8px;
+            color: #cbcbcb;
+        }
+
+    }
+    * {
+        margin: 0;
+    }
+    .icon-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    @include mat-elevation(1);
+    @include screen('phone') {
+        @include mat-elevation(0);
+        border-radius: 0;
+        padding: 16px 0;
+    }
+
+}

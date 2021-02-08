@@ -1,0 +1,17 @@
+@import "./screen.mixin.scss";
+
+@mixin grid() {
+    display: grid;
+    grid-template-columns: repeat(24, 1fr);
+    column-gap: 24px;
+    
+    @include screen('tablet-landscape') {
+        grid-template-columns: repeat(12, 1fr);
+        // grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        column-gap: 24px;
+    }
+    @include screen('phone') {
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 16px;
+    }
+}

@@ -1,0 +1,44 @@
+@import 'grid.mixin.scss';
+@import 'screen.mixin.scss';
+
+:host {
+    position: relative;
+    width: 100%;
+}
+
+.component {
+    position: relative;
+    @include grid();
+    width: 100%;
+    box-sizing: border-box;
+    .sensor-wrapper {
+        position: relative;
+        width: 100%;
+        grid-column: span 4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        app-sensor-small {
+            width: 100%;
+        }
+    }
+    padding: 16px 16px 64px;
+    gap: 8px;
+    @include screen('desktop') {
+        .sensor-wrapper {
+            grid-column: span 6;
+        }
+    }
+    @include screen('tablet-landscape') {
+        gap: 8px;
+        .sensor-wrapper {
+            grid-column: span 4;
+        }
+    }
+    @include screen('phone') {
+        gap: 0px;
+    }
+    app-section-divider {
+        grid-column: 1 / -1;
+    }
+}

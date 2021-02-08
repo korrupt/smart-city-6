@@ -1,0 +1,8 @@
+<div class="component">
+    <app-section-divider><h2>Active</h2></app-section-divider>
+    <div class="sensor-wrapper" *ngFor="let sensor of sensors$ | async">
+        <app-sensor-small [sensor]="sensor"></app-sensor-small>
+    </div>
+    <app-section-divider><h2>Inactive</h2></app-section-divider>
+    <app-section-divider><h2>Unindexed</h2></app-section-divider>
+</div>

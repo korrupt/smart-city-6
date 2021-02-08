@@ -17,7 +17,7 @@ export class NavigationListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.items$.subscribe(s => console.log(s))
+    // this.items$.subscribe(s => console.log(s))
   }
 
 }
