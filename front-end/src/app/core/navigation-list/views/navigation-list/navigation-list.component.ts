@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { RightDrawerService } from 'src/app/core/sidenav-wrapper/right-drawer/right-drawer.service';
+import { SensorSmallComponent } from 'src/app/sensor/views/sensor-small/sensor-small.component';
 import { NavigationListService } from '../../navigation-list.service';
 
 @Component({
@@ -13,7 +15,8 @@ export class NavigationListComponent implements OnInit {
   }
 
   constructor(
-    private navList: NavigationListService
+    private navList: NavigationListService,
+    private drawer: RightDrawerService
   ) { }
 
   ngOnInit(): void {

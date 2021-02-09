@@ -6,6 +6,7 @@ import { Route, RouterModule } from '@angular/router';
 import { SensorSmallComponent } from './views/sensor-small/sensor-small.component';
 import { MatIconModule } from '@angular/material/icon';
 import { SectionDividerModule } from '../core/section-divider/section-divider.module';
+import { DrawerFilterModule } from '../app-shared/drawer-filter/drawer-filter.module';
 
 const MATERIAL_MODULES = [
   MatIconModule  
@@ -22,6 +23,7 @@ const routes: Route[] = [
     CommonModule,
     RouterModule.forChild(routes),
     SectionDividerModule,
+    DrawerFilterModule,
     ...MATERIAL_MODULES
   ],
   providers: [

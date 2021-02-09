@@ -20,6 +20,7 @@ const MATERIAL_MODULES = [
 @NgModule({
     imports: [
         NavigationListModule,
+        SidenavWrapperModule,
         ...MATERIAL_MODULES
     ],
     exports: [
