@@ -9,16 +9,16 @@ import { take } from 'rxjs/operators';
 })
 export class RightDrawerService {
 
-  public attachComponent<T>(comp: ComponentType<T>, injector?: Injector): Observable<ComponentRef<T>> {
+  public attachComponent<T>(comp: ComponentType<T>, injector?: Injector): Observable<T> {
     const portal = new ComponentPortal(comp, null, injector);
     this._activePortal.next(portal);
-    return this._activePortalInstance.asObservable() as Observable<ComponentRef<T>>;
+    return this._activePortalInstance.asObservable() as Observable<T>;
   }
 
   /** internal */
   public _activePortal: BehaviorSubject<ComponentPortal<any> | undefined> = new BehaviorSubject(undefined as ComponentPortal<any> | undefined);
   /** internal */
-  public _activePortalInstance: BehaviorSubject<ComponentRef<any> | undefined> = new BehaviorSubject(undefined as ComponentRef<any> | undefined);
+  public _activePortalInstance: BehaviorSubject<any | undefined> = new BehaviorSubject(undefined as any | undefined);
 
   constructor() {
   

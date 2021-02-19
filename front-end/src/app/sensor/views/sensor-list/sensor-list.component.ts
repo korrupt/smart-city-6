@@ -49,7 +49,7 @@ export class SensorListComponent implements OnInit, OnDestroy {
     private cd: ChangeDetectorRef
   ) {
     this.drawer.attachComponent(DrawerFilterComponent, this.injector).subscribe(i => {
-      this.drawerInstance = i.instance as DrawerFilterComponent;
+      this.drawerInstance = i as DrawerFilterComponent;
       this.cd.markForCheck()
       // this.cd.detectChanges()
       console.log(this.drawerInstance);
