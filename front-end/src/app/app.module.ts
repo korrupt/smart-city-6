@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ContextualActionBarModule } from "ngx-contextual-action-bar";
 import { CoreModule } from './core/core.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ContextualActionBarModule,
     CoreModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

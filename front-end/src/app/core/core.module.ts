@@ -7,6 +7,7 @@ import { MatIconModule } from "@angular/material/icon";
 import { MatMenuModule } from "@angular/material/menu";
 import { MatButtonModule } from "@angular/material/button";
 import { SidenavWrapperModule } from "./sidenav-wrapper/sidenav-wrapper.module";
+import { ContainerModelService } from "./services/container-model.service";
 
 
 const MATERIAL_MODULES = [
@@ -28,7 +29,7 @@ const MATERIAL_MODULES = [
         ...MATERIAL_MODULES
     ],
     providers: [
-        
+        ContainerModelService
     ]
 })
 export class CoreModule {}

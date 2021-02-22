@@ -1,0 +1,14 @@
+.live-map {
+    position: relative;
+    width: 100%;
+    user-select: none;
+    .map {
+        position: relative;
+        width: 100%;
+        height: calc(100vh - 60px);
+        user-select: none;
+        google-map {
+            user-select: none;
+        }
+    }
+}

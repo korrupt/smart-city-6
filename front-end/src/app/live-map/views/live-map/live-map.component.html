@@ -1,3 +1,24 @@
 <div class="live-map">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis itaque ullam blanditiis dolore a, quia vel aliquid ex neque quis dicta, debitis voluptates mollitia ea iusto magni sequi nobis ipsam.
+    <div class="map">
+        <!-- {{apiLoaded | async}} -->
+        <google-map [options]="mapsOptions" width="100%" height="100%">
+            <!-- <map-circle *ngFor="let container of containers$ | async"
+                [center]="container.center"
+                [radius]="container.radius"
+            >
+
+            </map-circle> -->
+
+            <map-circle
+                [center]="{lat: 63.408262180129725, lng: 10.470540968379266}"
+                [radius]="50"
+                [options]="{
+                    fillColor: '#ffb224'
+                }"
+            >
+
+            </map-circle>
+
+        </google-map>
+    </div>
 </div>
