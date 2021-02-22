@@ -6,10 +6,21 @@ import { Route, RouterModule } from '@angular/router';
 import { SensorSmallComponent } from './views/sensor-small/sensor-small.component';
 import { MatIconModule } from '@angular/material/icon';
 import { SectionDividerModule } from '../core/section-divider/section-divider.module';
-import { DrawerFilterModule } from '../app-shared/drawer-filter/drawer-filter.module';
+// import { DrawerFilterModule } from '../app-shared/drawer-filter/drawer-filter.module';
+import { MatInputModule } from '@angular/material/input';
+import { SensorFilterComponent } from './views/sensor-filter/sensor-filter.component';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatSelectModule } from "@angular/material/select";
+import { MatButtonModule } from '@angular/material/button';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const MATERIAL_MODULES = [
-  MatIconModule  
+  MatIconModule,
+  MatInputModule,
+  MatChipsModule,
+  MatButtonModule,
+  MatSelectModule
 ]
 
 const routes: Route[] = [
@@ -18,13 +29,15 @@ const routes: Route[] = [
 
 
 @NgModule({
-  declarations: [SensorListComponent, SensorSmallComponent],
+  declarations: [SensorListComponent, SensorSmallComponent, SensorFilterComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
     SectionDividerModule,
-    DrawerFilterModule,
+    FormsModule,
+    ReactiveFormsModule,
     ...MATERIAL_MODULES
+
   ],
   providers: [
     SensorModelService

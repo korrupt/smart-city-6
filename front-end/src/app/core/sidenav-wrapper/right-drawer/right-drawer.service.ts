@@ -9,6 +9,17 @@ import { take } from 'rxjs/operators';
 })
 export class RightDrawerService {
 
+  private readonly _state: BehaviorSubject<boolean> = new BehaviorSubject(false as boolean);
+  public get state$() { return this._state.asObservable(); }
+
+  public setOpen(): void {
+    this._state.next(true)
+  }
+
+  public setClosed(): void {
+    this._state.next(false);
+  }
+
   public attachComponent<T>(comp: ComponentType<T>, injector?: Injector): Observable<T> {
     const portal = new ComponentPortal(comp, null, injector);
     this._activePortal.next(portal);

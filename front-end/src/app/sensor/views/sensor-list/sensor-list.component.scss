@@ -41,4 +41,9 @@
     app-section-divider {
         grid-column: 1 / -1;
     }
+    .filter-row {
+        grid-column: 1 / -1;
+        display: flex;
+        justify-content: flex-end;
+    }
 }

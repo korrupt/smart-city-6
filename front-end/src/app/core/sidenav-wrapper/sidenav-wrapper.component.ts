@@ -1,10 +1,10 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
 import { SidenavWrapperService } from './sidenav-wrapper.service';
 
 import { BreakpointObserver, MediaMatcher } from "@angular/cdk/layout";
 import { Observable, of } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
-import { MatDrawerMode } from '@angular/material/sidenav';
+import { MatDrawerMode, MatSidenav } from '@angular/material/sidenav';
 import { RightDrawerService } from './right-drawer/right-drawer.service';
 
 @Component({
@@ -15,7 +15,13 @@ import { RightDrawerService } from './right-drawer/right-drawer.service';
 export class SidenavWrapperComponent implements OnInit {
 
   public get state$()  { return this.sidenav.state$; }
-  public get drawer$() { return this.drawer._activePortal.pipe(map(portal => portal !== undefined)) }
+  public get drawer$() { return this.drawer.state$; }
+
+  @ViewChild('drawer', { read: MatSidenav }) private dr!: MatSidenav;
+
+  public setClosed(): void {
+    this.sidenav.setClosed()
+  }
 
   private _mobileQueryListener!: () => void;
   public mobileQuery;

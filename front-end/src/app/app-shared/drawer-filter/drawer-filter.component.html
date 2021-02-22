@@ -1,11 +1,30 @@
+<ng-template #matches let-filter>
+    <mat-form-field>
+        <mat-label>{{filter?.label}}</mat-label>
+        <input type="text" matInput >
+    </mat-form-field>
+</ng-template>
+
 <div class="component">
-    <div class="filters">
-        <mat-form-field>
-            <mat-label>Contains:</mat-label>
-            <!-- <mat-chip-list>
-                <mat-chip [removable]="true">meme</mat-chip>
-            </mat-chip-list> -->
-            <input type="text" matInput>
-        </mat-form-field>
-    </div>
+    <form class="filters" [formGroup]="filterGroup">
+        <ng-container *ngFor="let filter of filters">
+            <ng-container [ngSwitch]="filter.type">
+                <mat-form-field *ngSwitchCase="'includes'">
+                    <mat-label>{{filter?.label}}</mat-label>
+                    <input type="text" matInput [formControlName]="filter.id" autocomplete="off">
+                </mat-form-field>
+
+                
+            </ng-container>
+                <!-- <ng-container [ngTemplateOutlet]="matches" [ngTemplateOutletContext]="{$implicit: filter}"></ng-container> -->
+        </ng-container>
+        <!-- <mat-form-field> -->
+            <!-- <input type="text" matInput> -->
+            <!-- <ng-container [ngTemplateOutlet]="matches"></ng-container> -->
+        <!-- </mat-form-field> -->
+    </form>
 </div>
+<!-- <mat-chip-list>
+    <mat-chip [removable]="true">meme</mat-chip>
+</mat-chip-list> -->
+<!-- <input type="text" matInput autocomplete="off"> -->

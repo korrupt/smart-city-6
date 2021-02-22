@@ -1,0 +1,33 @@
+<div class="sensor-filter">
+    <button mat-icon-button (click)="closeDrawer()">
+        <mat-icon>clear</mat-icon>
+    </button>
+    <form [formGroup]="filterForm">
+        <mat-form-field>
+            <mat-label>Sort by</mat-label>
+            <mat-select formControlName="sort">
+                <mat-option *ngFor="let option of sort"
+                    [value]="option.prop"
+                >{{option.label}}</mat-option>
+            </mat-select>    
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Search:</mat-label>
+            <mat-chip-list #chipList formControlName="name">
+                <mat-chip *ngFor="let chip of chips"
+                    [removable]="removable"
+                    [selectable]="selectable"
+                    (removed)="remove(chip)"
+                >
+                    {{chip}}
+                    <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                </mat-chip>
+                <input type="text" autocomplete="off"
+                    [matChipInputFor]="chipList"
+                    (matChipInputTokenEnd)="add($event)"
+                    >
+            </mat-chip-list>
+        </mat-form-field>
+        
+    </form>
+</div>

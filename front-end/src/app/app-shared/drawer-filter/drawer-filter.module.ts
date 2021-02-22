@@ -6,6 +6,7 @@ import { MatChipsModule } from "@angular/material/chips";
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from "@angular/material/input";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const MATERIAL_MODULES = [
   MatChipsModule,
@@ -18,6 +19,8 @@ const MATERIAL_MODULES = [
   declarations: [DrawerFilterComponent],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
+    FormsModule,
     ...MATERIAL_MODULES,
   ],
   exports: [DrawerFilterComponent],

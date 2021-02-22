@@ -3,7 +3,7 @@ import { BehaviorSubject } from 'rxjs';
 import { INavigationListItem } from './navigation-list.model';
 
 const TEST_DATA: INavigationListItem[] = [
-  { url: '', displayName: 'Live Map', icon: 'map' },
+  { url: 'live-map', displayName: 'Live Map', icon: 'map' },
   { url: 'sensors', displayName: 'Sensors', icon: 'sensors' },
   { url: 'admin', displayName: 'Administration', icon: 'build', disabled: true }
 ]
